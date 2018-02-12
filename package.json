@@ -8,14 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ayushkumar26/prediction_forum.git"
+    "url": "git+https://github.com/edwinychu/prediction_forum.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ayushkumar26/prediction_forum/issues"
+    "url": "https://github.com/edwinychu/prediction_forum/issues"
   },
-  "homepage": "https://github.com/ayushkumar26/prediction_forum#readme",
+  "homepage": "https://github.com/edwinychu/prediction_forum#readme",
+  },
   "dependencies": {
     "create-react-app": "^1.5.2"
   }
