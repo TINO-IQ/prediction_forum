@@ -1,0 +1,22 @@
+{
+  "name": "prediction_forum",
+  "version": "1.0.0",
+  "description": "A place for users to provide and discuss stock predictions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayushkumar26/prediction_forum.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayushkumar26/prediction_forum/issues"
+  },
+  "homepage": "https://github.com/ayushkumar26/prediction_forum#readme",
+  "dependencies": {
+    "create-react-app": "^1.5.2"
+  }
+}
