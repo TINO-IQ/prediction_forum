@@ -16,6 +16,7 @@
     "url": "https://github.com/edwinychu/prediction_forum/issues"
   },
   "homepage": "https://github.com/edwinychu/prediction_forum#readme",
+  },
   "dependencies": {
     "create-react-app": "^1.5.2"
   }
