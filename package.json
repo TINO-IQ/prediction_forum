@@ -1,23 +1,20 @@
 {
-  "name": "prediction_forum",
-  "version": "1.0.0",
-  "description": "A place for users to provide and discuss stock predictions",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/edwinychu/prediction_forum.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/edwinychu/prediction_forum/issues"
-  },
-  "homepage": "https://github.com/edwinychu/prediction_forum#readme",
-  },
+  "name": "reddit-clone",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "create-react-app": "^1.5.2"
+    "firebase": "^4.1.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "3.0.0"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
