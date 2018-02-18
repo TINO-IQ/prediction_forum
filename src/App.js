@@ -1,19 +1,13 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Header from './components/Header';
+import Main from './components/Main';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Prediction Forum powered by TINO IQ</h1>
-        </header>
-        <p className="App-intro">
-          Make predictions, submit analysis, and discuss with other users
-        </p>
-        <div>The prediction feed will go here</div>
+        <Header />
+        <Main />
       </div>
     );
   }
