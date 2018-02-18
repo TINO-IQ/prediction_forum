@@ -1,46 +1,42 @@
 import React, { Component } from 'react';
-import * as firebase from "firebase";
+import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router';
 
-import config from './firebase-config';
+import Home from '../Home/home.js';
+import Feed from '../Feed/feed.js';
+import NotFound from '../NotFound/notFound.js';
 
 class App extends Component {
-  constructor() {
-    super();
-
-    // Initialize Firebase
-    firebase.initializeApp(config);
-  }
-
-  state = {
-    posts: [],
-    loading: true
-  };
-
-  componentWillMount() {
-    let postsRef = firebase.database().ref('posts');
-
-    let _this = this;
-
-    postsRef.on('value', function(snapshot) {
-      _this.setState({
-        posts: snapshot.val(),
-        loading: false
-      });
-    });
-  }
-
   render() {
     return (
-      <div className="App">
-        {this.props.children && React.cloneElement(this.props.children, {
-          // https://github.com/ReactTraining/react-router/blob/v3/examples/passing-props-to-children/app.js#L56-L58
-          firebase: firebase.database(),
-          posts: this.state.posts,
-          loading: this.state.loading
-        })}
-      </div>
-    );
+      <Router history={browserHistory}>
+        <Route path='/' component={Home} />
+        <Route path='/feed' component={Feed} />
+        <Route path='*' component={NotFound} />
+      </Router>
+    )
   }
 }
+
+// class App extends Component {
+//   constructor() {
+//     super();
+
+//     this.state = {
+//       predictions: []
+//     };
+//   }
+
+//   componentWillMount() {
+//     console.log('hello from component will mount');
+//   }
+
+//   render() {
+//     return (
+//       <div className="App">
+//         TINO IQ Prediction Forum
+//       </div>
+//     );
+//   }
+// }
 
 export default App;

@@ -1,8 +1,9 @@
 {
-  "name": "reddit-clone",
+  "name": "prediction-forum",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.17.1",
     "body-parser": "^1.18.2",
     "bookshelf": "^0.12.1",
     "eslint": "^4.17.0",

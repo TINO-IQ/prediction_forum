@@ -10,5 +10,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.listen(PORT, console.log(`now listening on port ${PORT}`));
 
 app.get('/', (req, res) => {
-  res.end('Prediction forum home page');
+  console.log('/ GET route triggered');
+  // res.end();
 });
