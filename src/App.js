@@ -13,6 +13,7 @@ class App extends Component {
         <p className="App-intro">
           Make predictions, submit analysis, and discuss with other users
         </p>
+        <div>The prediction feed will go here</div>
       </div>
     );
   }
