@@ -10,8 +10,8 @@ module.exports = () => {
   prediction.predictionID = getRandomInt(0, 1000);
   prediction.ticker = tickers[getRandomInt(0, 4)];
   prediction.window = windows[getRandomInt(0, 1)];
-  prediction.startDate = moment().format('MMM Do YY');
-  prediction.endDate = moment().add(prediction.window, 'days').format('MMM Do YY');
+  prediction.startDate = moment().format('MMM Do YYYY');
+  prediction.endDate = moment().add(prediction.window, 'days').format('MMM Do YYYY');
   prediction.votes = getRandomInt(-5, 25);
   
   switch (prediction.ticker) {
