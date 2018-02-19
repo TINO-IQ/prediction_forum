@@ -1,6 +1,6 @@
-Prediction Forum by TINO IQ.
+Prediction Forum by TINO IQ (currently in development)
 
-A place to talk stocks (in development)
+A place to talk stocks.
 
 Submit your own prediction for evaluation against both the actual stock market result and TINO IQ's prediction for a given stock's trading window. 
 
