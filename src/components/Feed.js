@@ -14,7 +14,6 @@ class Feed extends React.Component {
   componentDidMount() {
     axios.get('http://localhost:1337/predictions')
       .then(response => {
-        console.log('predictions:', response.data);
         this.setState({ predictions: response.data });
       })
       .catch(err => console.log(err));

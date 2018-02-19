@@ -20,7 +20,7 @@ app.listen(PORT, console.log(`now listening on port ${PORT}`));
 app.get('/predictions', (req, res) => {
   console.log('predictions triggered');
   const predictions = [];
-  for (var i = 0; i < 5; i += 1) {
+  for (var i = 0; i < 10; i += 1) {
     predictions.push(generatePrediction());
   }
   res.status(200).json(predictions);
