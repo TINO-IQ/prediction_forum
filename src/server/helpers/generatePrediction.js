@@ -2,7 +2,7 @@
 
 const moment = require('moment');
 
-const generatePrediction = () => {
+module.exports = () => {
   const tickers = ['GOOGL', 'AAPL', 'AMZN', 'FB', 'JPM'];
   const windows = [5, 10];
   const prediction = {};
@@ -38,5 +38,3 @@ const generatePrediction = () => {
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-generatePrediction();
