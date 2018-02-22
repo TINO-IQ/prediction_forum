@@ -12,7 +12,7 @@ class AllStock extends React.Component {
     }
 
     handleClick = (stock) => {
-        <SingleStock predictions={stock}/>
+        return <SingleStock predictions={stock} key={stock.key}/>
     }
 
     componentDidMount() {
@@ -30,8 +30,8 @@ class AllStock extends React.Component {
             <div>
                 <br/>
                 <ul>
-                {this.state.predictions.map(stock => (
-                    <li key={stock.key}>
+                {this.state.predictions.map((stock, index) => (
+                    <li key={index}>
                         <h3 onClick={this.handleClick.bind(this)}>{stock.ticker}</h3>
                         <Link to={`/stocks/${stock.ticker}`}>Send us your predictions for {stock.company}</Link>
                         <p>{stock.company} | Start: {stock.startDate} | {stock.window} Day | End: {stock.endDate} | Votes: {stock.votes}</p>               
