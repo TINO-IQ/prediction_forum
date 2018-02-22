@@ -1,20 +1,32 @@
 {
-  "name": "reddit-clone",
+  "name": "prediction-forum",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "firebase": "^4.1.1",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-router": "3.0.0"
-  },
-  "devDependencies": {
-    "react-scripts": "1.0.7"
+    "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "bookshelf": "^0.12.1",
+    "eslint": "^4.18.0",
+    "express": "^4.16.2",
+    "knex": "^0.14.3",
+    "moment": "^2.20.1",
+    "pg": "^7.4.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:server": "nodemon ./src/server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dbSetup": "rm -rf src/database/migrations && rm -rf src/database/seeds && npm run setup1",
+    "setup1": "knex migrate:make tables && cp src/database/initial/populateDatabase.js src/database/migrations/* && npm run setup2",
+    "setup2": "knex migrate:latest"
+  },
+  "devDependencies": {
+    "nodemon": "^1.15.0"
   }
 }
