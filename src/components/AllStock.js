@@ -19,8 +19,6 @@ class AllStock extends React.Component {
 		axios.get('http://localhost:1337/predictions')
 			.then(response => {
 				this.setState({ predictions: response.data });
-				console.log('api loaded');
-				console.log(this.state);
 			})
 			.catch(err => console.log(err));
 	}
