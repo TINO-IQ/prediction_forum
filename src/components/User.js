@@ -24,10 +24,10 @@ class User extends React.Component {
       <div>
         <br/>
         <ul>
-          <li>Welcome back, {this.state.userName}</li>
-          <li>Here are your current Predictions : {this.state.pastPredictions}</li>
-          <li>Here are your past Predictions: {this.state.pastPredictions}</li>
-          <li>Your total profits made playing against TinoIQ: {this.state.userProfits}</li>
+          <ul>Welcome back, {this.state.userName}</ul>
+          <ul>Here are your current Predictions : {this.state.pastPredictions}</ul>
+          <ul>Here are your past Predictions: {this.state.pastPredictions}</ul>
+          <ul>Your total profits made playing against TinoIQ: {this.state.userProfits}</ul>
         </ul>
       </div>
     )

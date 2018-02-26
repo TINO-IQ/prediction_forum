@@ -29,11 +29,11 @@ class AllStock extends React.Component {
 				<br/>
 				<ul>
 				{this.state.predictions.map((stock, index) => (
-					<li key={index}>
+					<ul key={index}>
 						<h3 onClick={this.handleClick.bind(this)}>{stock.ticker}</h3>
 						<Link to={`/stocks/${stock.ticker}`}>Send us your predictions for {stock.company}</Link>
 						<p>{stock.company} | Start: {stock.startDate} | {stock.window} Day | End: {stock.endDate} | Votes: {stock.votes}</p>               
-					</li>
+					</ul>
 					))
 				}
 				</ul>

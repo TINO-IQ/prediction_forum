@@ -15,9 +15,9 @@ class TinoIQ extends React.Component {
       <div>
         <br/>
         <ul>
-          <li>Statistics Here</li>
-          <li>Analytics of TinoIQ</li>
-          <li>Total Profit made with TinoIQ: {this.state.profits}</li>
+          <ul>Statistics Here</ul>
+          <ul>Analytics of TinoIQ</ul>
+          <ul>Total Profit made with TinoIQ: {this.state.profits}</ul>
         </ul>
       </div>
     )

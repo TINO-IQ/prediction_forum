@@ -25,12 +25,12 @@ class Company extends React.Component {
 				<br/>
 				<ul>
 				{this.state.companies.map((stock, index) => (
-					<li key={index}>
+					<ul key={index}>
 						<h3 onClick={this.handleClick.bind(this)}>{stock}</h3>
 						<Link to={`/stocks/${stock}/active`}>Active Predictions for {stock}</Link>
 						<br/>
 						<Link to={`/stocks/${stock}/historic`}>Historic Predictions for {stock}</Link>             
-					</li>
+					</ul>
 				))
 				}
 				</ul>
