@@ -1,4 +1,7 @@
 const routes = require('express').Router();
+const { getStockInfo } = require('../helpers/getStockInfo.js');
+const { getUserInfo } = require('../helpers/getUserInfo.js');
+const { getPredictions } = require('../heleprs/getPredictions.js');
 
 // loads all predictions within past week
 routes.get('/', (req, res) => {
@@ -22,24 +25,16 @@ routes.get('/predictions', (req, res) => {
 // gets specific stock info and all comments for that stock clicked
 routes.get('/stock/:stockId', (req, res) => {
     const { stockId } = req.params;
-
-    /* query database for stock info 
-    *   - stock prediction (blurred if open, unblurred if closed)
-    *   - open, closed status
-    *   - time until end
-    *   - all the comments
-    */
-
-
+    let stockInfo = getStockInfo(stockId);
+    
     // return object of stock info
 
 });
 
 // gets specific user info
 routes.get('/users/:userId', (req, res) => {
-    const { userID } = req.params;
-
-
+    const { userId } = req.params;
+    let userInfo = getUserInfo(userId);
 
     // return object of all user info
 

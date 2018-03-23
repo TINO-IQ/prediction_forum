@@ -16,9 +16,13 @@ const knex = require('knex')({
 
 let bookshelf = require('bookshelf')(knex);
 
-// let User = bookshelf.Model.extend({
-//   tableName: 'users_test',
-// });
+let Stock = bookshelf.Model.extend({
+  tableName: "stocks"
+})
+
+let User = bookshelf.Model.extend({
+  tableName: "users_test"
+})
 
 // let Post = bookshelf.Model.extend({
 //   tableName: 'posts_test',
@@ -32,11 +36,14 @@ let bookshelf = require('bookshelf')(knex);
 //   tableName: "contents_test"
 // })
 
+
+
 module.exports = {
   knex,
   User,
   Post,
   Prediction,
-  Content
+  Content,
+  Stock
 }
 
