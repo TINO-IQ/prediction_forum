@@ -32,8 +32,11 @@ let bookshelf = require('bookshelf')(knex);
 //   tableName: "contents_test"
 // })
 
-module.exports.knex = knex;
-module.exports.User = User;
-module.exports.Post = Post;
-module.exports.Prediction = Prediction;
-module.exports.Content = Content;
+module.exports = {
+  knex,
+  User,
+  Post,
+  Prediction,
+  Content
+}
+
