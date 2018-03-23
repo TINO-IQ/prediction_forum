@@ -21,10 +21,7 @@
     "start:server": "nodemon ./src/server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "dbSetup": "rm -rf src/database/migrations && rm -rf src/database/seeds && npm run setup1",
-    "setup1": "knex migrate:make tables && cp src/database/initial/populateDatabase.js src/database/migrations/* && npm run setup2",
-    "setup2": "knex migrate:latest"
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
     "nodemon": "^1.15.0"
