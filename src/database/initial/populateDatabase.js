@@ -8,27 +8,27 @@
  */
 exports.up = function(knex, Promise) {
   return Promise.all([
-    knex.schema.createTable("users_test", function(table) {
+    knex.schema.createTable("users", function(table) {
       table.increments("id").primary();
+      table.string("googleid");
+      table.string("token");
       table.string("name");
       table.string("email");
       table.string("username");
       table.integer("upvotes");
       table.integer("downvotes");
-      table.integer("correct");
-      table.integer("incorrect");
-    }), knex.schema.createTable("posts_test", function(table) {
+    }), knex.schema.createTable("posts", function(table) {
       table.increments("id").primary();
-      table.integer("user_id").index().references("id").inTable("users_test");
-      table.integer("predictions_id").index().references("id").inTable("predictions_test");
-      table.integer("content_id").index().references("id").inTable("contents_test");
+      table.integer("user_id").index().references("id").inTable("users");
+      table.integer("predictions_id").index().references("id").inTable("predictions");
+      table.integer("content_id").index().references("id").inTable("contents");
       table.integer("upvotes");
       table.integer("downvotes");
       table.date("created_at");
-    }), knex.schema.createTable("contents_test", function(table) {
+    }), knex.schema.createTable("contents", function(table) {
       table.increments("id").primary();
       table.string("content");
-    }), knex.schema.createTable("predictions_test", function(table) {
+    }), knex.schema.createTable("predictions", function(table) {
       table.increments("id").primary();
       table.string("ticker");
       table.string("company");
@@ -50,8 +50,8 @@ exports.up = function(knex, Promise) {
  */
 exports.down = function(knex, Promise) {
   return knex.schema
-    .dropTableIfExists("users_test")
-    .dropTableIfExists("posts_test")
-    .dropTableIfExists("contents_test")
-    .dropTableIfExists("predictions_test");
+    .dropTableIfExists("users")
+    .dropTableIfExists("posts")
+    .dropTableIfExists("contents")
+    .dropTableIfExists("predictions");
 };
