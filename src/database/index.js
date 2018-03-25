@@ -4,7 +4,6 @@ const dbPassword = require('../../config.js').dbPassword;
 const tinoURL = require('../../config.js').tinoURL;
 const port = process.env.PORT || 5432;
 
-
 const connection =
   tinoURL || `postgres://postgres:${dbPassword}@${pgCloudURL}:5432/tino` || `postgres://postgres:${dbPassword}@localhost:5432/tino` ||
   `${process.env.DATABASE_URL}`;
@@ -12,31 +11,37 @@ const connection =
 const knex = require('knex')({
   client: 'pg',
   connection: connection
-});
+})
 
 let bookshelf = require('bookshelf')(knex);
 
-let Stock = bookshelf.Model.extend({
-  tableName: "stocks"
+let Prediction = bookshelf.Model.extend({
+  tableName: "predictions",
+  posts: () => {
+    return this.hasMany(Post);
+  }
 })
 
 let User = bookshelf.Model.extend({
-  tableName: "users_test"
+  tableName: "users"
 })
 
-// let Post = bookshelf.Model.extend({
-//   tableName: 'posts_test',
-// });
+let Post = bookshelf.Model.extend({
+  tableName: 'posts',
+  prediction: () => {
+    return this.belongsTo(Prediction);
+  },
+  content: () => {
+    return this.hasOne(Content);
+  }
+})
 
-// let Prediction = bookshelf.Model.extend({
-//   tableName: 'predictions_test'
-// })
-
-// let Content = bookshelf.Model.extend({
-//   tableName: "contents_test"
-// })
-
-
+let Content = bookshelf.Model.extend({
+  tableName: "contents",
+  post: () => {
+    return this.belongsTo(Post);
+  }
+})
 
 module.exports = {
   knex,
@@ -44,6 +49,5 @@ module.exports = {
   Post,
   Prediction,
   Content,
-  Stock
 }
 

@@ -1,13 +1,17 @@
-const { Stock } = require("../../database/index.js")
-const { knex } = require("../../database/index.js")
+const table = require("../database/index.js")
 
 /**  Queries PG database and retrieves all stock predictions from past 10 days
  * @returns {Object} predictions from past 10 days
  */
 const getPredictions = () => {
-    // query database for recent posts
-
-    // return posts
+    // return stock predictions from past 10 days
+    const start_date = null;
+    const end_date = null;
+    
+    return table.Prediction.forge()
+      .where("id", "=", userId)
+      .query()
+      .select()
     
 }
 
